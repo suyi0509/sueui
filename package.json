@@ -1,0 +1,26 @@
+{
+  "name": "test-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "dumi dev",
+    "start": "npm run dev",
+    "build:site": "rimraf doc-site && dumi build",
+ 	  "preview:site": "npm run build:site && serve doc-site"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@umijs/fabric": "^2.14.1",
+    "dumi": "^2.1.14",
+    "prettier": "^2.8.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^4.1.2",
+    "serve": "^14.2.0"
+  }
+}
