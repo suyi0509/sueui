@@ -1,16 +1,16 @@
 <!--
  * @Author: zhaoliang
  * @Date: 2023-02-28 20:52:38
- * @LastEditTime: 2023-02-28 20:52:39
- * @LastEditors: zhaoliang
+ * @LastEditTime: 2023-03-01 13:39:48
+ * @LastEditors: suyi
  * @Description: 如果代码不是为了制造bug，那将毫无意义
- * @FilePath: \test-ui\docs\index.md
+ * @FilePath: \test-uui\docs\index.md
  * 菩提本无树，明镜亦非台。本来无一物，何处惹尘埃
 -->
 ---
-title: XIANZAO UI
+title: AM-UI
 hero:
-  title: Xianzao UI
+  title:AM-UI
   desc: 文档站点基于 dumi 生成
   actions:
     - text: 快速上手

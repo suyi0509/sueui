@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "module": "esm/index.js",
+  "files": [
+    "lib",
+    "esm"
+  ],
   "typings": "lib/index.d.ts",
   "scripts": {
     "dev": "dumi dev",
@@ -12,10 +16,11 @@
     "preview:site": "cross-env SITE_BUILD_ENV=PREVIEW npm run build:site && serve doc-site",
     "deploy:site": "npm run build:site && gh-pages -d doc-site",
     "build:types": "tsc -p tsconfig.build.json && cpr lib esm",
-    "clean": "rimraf lib esm dist",
+    "clean": "rimraf lib esm dist doc-site",
     "build": "npm run clean && npm run build:types && gulp"
   },
   "keywords": [],
+  "homepage": "",
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -42,6 +47,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@babel/runtime": "^7.21.0"
+    "@babel/runtime": "^7.21.0",
+    "antd": "^5.2.3"
   }
 }
