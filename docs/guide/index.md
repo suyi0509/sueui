@@ -1,6 +1,7 @@
 ---
+title: 指导
 hero:
-  title: AM-UI
+  title: AM-UI1111
   description: 艾美科技
   actions:
     - text: Hello

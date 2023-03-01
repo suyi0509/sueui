@@ -10,7 +10,7 @@ import { createHistory } from './core/history';
 import { ApplyPluginsType } from 'umi';
 
 
-const publicPath = "/test-uui/";
+const publicPath = "/am-ui/";
 const runtimePublicPath = false;
 
 async function render() {
@@ -33,7 +33,7 @@ async function render() {
     initialValue: {},
   });
 
-  const basename = contextOpts.basename || '/test-uui';
+  const basename = contextOpts.basename || '/am-ui';
   const historyType = contextOpts.historyType || 'browser';
 
   const history = createHistory({

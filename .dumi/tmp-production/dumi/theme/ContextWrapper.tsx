@@ -33,14 +33,14 @@ export default function DumiContextWrapper() {
 
   return (
     <SiteContext.Provider value={{
-      pkg: {"name":"test-ui","description":"","version":"1.0.0","license":"ISC","author":""},
+      pkg: {"name":"test-am-ui","description":"","version":"1.0.1","license":"ISC","author":""},
       entryExports,
       demos,
       components,
       locales,
       loading,
       setLoading,
-      themeConfig: {"title":"XIANZAO UI","footer":"Copyright © 2023 | Powered by <a href=\"https://d.umijs.org\" target=\"_blank\" rel=\"noreferrer\">dumi</a>","prefersColor":{"default":"light","switch":true}},
+      themeConfig: {"footer":"Copyright © 2023 | Powered by <a href=\"https://d.umijs.org\" target=\"_blank\" rel=\"noreferrer\">dumi</a>","prefersColor":{"default":"light","switch":true},"name":"AM-UI"},
     }}>
       {outlet}
     </SiteContext.Provider>

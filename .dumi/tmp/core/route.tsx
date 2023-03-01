@@ -19,15 +19,16 @@ if (process.env.NODE_ENV === 'development') {
 import React from 'react';
 
 export async function getRoutes() {
-  const routes = {"404":{"id":"404","path":"*","parentId":"DocLayout"},"dumi-context-layout":{"id":"dumi-context-layout","path":"/","isLayout":true},"DocLayout":{"id":"DocLayout","path":"/","parentId":"dumi-context-layout","isLayout":true},"docs/index":{"path":"","id":"docs/index","parentId":"DocLayout"},"components/alert/index":{"id":"components/alert/index","path":"components/alert","parentId":"DocLayout"},"demo-render":{"id":"demo-render","path":"~demos/:id","parentId":"dumi-context-layout","prerender":false}} as const;
+  const routes = {"404":{"id":"404","path":"*","parentId":"DocLayout"},"dumi-context-layout":{"id":"dumi-context-layout","path":"/","isLayout":true},"DocLayout":{"id":"DocLayout","path":"/","parentId":"dumi-context-layout","isLayout":true},"docs/guide/index":{"path":"guide","id":"docs/guide/index","parentId":"DocLayout"},"docs/index":{"path":"","id":"docs/index","parentId":"DocLayout"},"components/AmTable/index":{"id":"components/AmTable/index","path":"components/am-table","parentId":"DocLayout"},"demo-render":{"id":"demo-render","path":"~demos/:id","parentId":"dumi-context-layout","prerender":false}} as const;
   return {
     routes,
     routeComponents: {
 '404': React.lazy(() => import(/* webpackChunkName: "nm__dumi__dist__client__pages__404" */'E:/UI/test-uui/node_modules/dumi/dist/client/pages/404.js')),
 'dumi-context-layout': React.lazy(() => import(/* webpackChunkName: "dumi__tmp__dumi__theme__ContextWrapper" */'E:/UI/test-uui/.dumi/tmp/dumi/theme/ContextWrapper.tsx')),
 'DocLayout': React.lazy(() => import(/* webpackChunkName: "nm__dumi__theme-default__layouts__DocLayout__index" */'E:/UI/test-uui/node_modules/dumi/theme-default/layouts/DocLayout/index.js')),
+'docs/guide/index': React.lazy(() => import(/* webpackChunkName: "docs__guide__index.md" */'E:/UI/test-uui/docs/guide/index.md')),
 'docs/index': React.lazy(() => import(/* webpackChunkName: "docs__index.md" */'E:/UI/test-uui/docs/index.md')),
-'components/alert/index': React.lazy(() => import(/* webpackChunkName: "alert__index.md" */'E:/UI/test-uui/src/alert/index.md')),
+'components/AmTable/index': React.lazy(() => import(/* webpackChunkName: "AmTable__index.md" */'E:/UI/test-uui/src/AmTable/index.md')),
 'demo-render': React.lazy(() => import(/* webpackChunkName: "nm__dumi__dist__client__pages__Demo__index" */'E:/UI/test-uui/node_modules/dumi/dist/client/pages/Demo/index.js')),
 },
   };
