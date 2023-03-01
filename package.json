@@ -1,5 +1,5 @@
 {
-  "name": "test-ui",
+  "name": "test-am-ui",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,13 +11,13 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "dev": "dumi dev",
-    "start": "npm run dev",
-    "build:site": "rimraf doc-site && dumi build",
-    "preview:site": "cross-env SITE_BUILD_ENV=PREVIEW npm run build:site && serve doc-site",
-    "deploy:site": "npm run build:site && gh-pages -d doc-site",
-    "build:types": "tsc -p tsconfig.build.json && cpr lib esm",
-    "clean": "rimraf lib esm dist doc-site",
-    "build": "npm run clean && npm run build:types && gulp"
+    "docs:preview": "cross-env SITE_BUILD_ENV=PREVIEW npm run build:site && serve doc-site",
+    "docs:clean": "rimraf doc-site",
+    "docs:build": "rimraf doc-site && dumi build",
+    "docs:deploy": "npm run docs:build && gh-pages -d doc-site",
+    "np:clean": "rimraf lib esm dist",
+    "np:build": "npm run np:clean && tsc -p tsconfig.build.json && cpr lib esm && gulp",
+    "np:publish": "npm publish"
   },
   "keywords": [],
   "homepage": "",
@@ -33,21 +33,25 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@umijs/fabric": "^2.14.1",
+    "antd": "^5.2.3",
     "cpr": "^3.0.1",
     "cross-env": "^7.0.3",
     "dumi": "^2.1.14",
     "gh-pages": "^5.0.0",
     "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-less": "^5.0.0",
     "prettier": "^2.8.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^4.1.2",
     "serve": "^14.2.0",
+    "through2": "^4.0.2",
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@babel/runtime": "^7.21.0",
-    "antd": "^5.2.3"
+    "@babel/runtime": "^7.21.0"
   }
 }
