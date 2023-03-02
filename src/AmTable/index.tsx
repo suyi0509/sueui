@@ -10,7 +10,7 @@ import { Table } from 'antd';
 import type { TableProps } from 'antd/es/table';
 import React, { type FC } from 'react';
 
-import './index.less';
+import './style/index';
 
 export interface IAmTable<T> extends TableProps<T> {
   /**
