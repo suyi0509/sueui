@@ -1,11 +1,8 @@
-<!--
- * @Author: suyi
- * @Date: 2023-03-02 15:44:10
- * @LastEditTime: 2023-03-02 16:52:13
- * @LastEditors: suyi
- * @Description: 如果代码不是为了制造bug，那将毫无意义
- * @FilePath: \test-uui\README.md
--->
+`AM-UI 艾美UI库`
+
+[dumi](https://v1.d.umijs.org/zh-CN)
+[antd](https://ant.design/index-cn)
+[npm](https://www.npmjs.com/)
 
 ### 安装
 ```bash
@@ -42,7 +39,6 @@ npm run np:publish
 
 
 ## 项目结构
----
 ```js
 test-uui
 ├─ demo                     // 组件文档demo示例文件夹
@@ -69,7 +65,6 @@ test-uui
 ```
 
 ## 执行脚本
----
 ```js
     // 本地运行dumi文档项目
     "dev": "dumi dev", 
