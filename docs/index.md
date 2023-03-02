@@ -1,20 +1,9 @@
 ---
-hero:
-  title: AM-UI
-  description: 艾美科技
-  actions:
-    - text: Hello
-      link: /
-    - text: World
-      link: /
-features:
-  - title: Hello
-    emoji: 💎
-    description: Put hello description here
-  - title: World
-    emoji: 🌈
-    description: Put world description here
-  - title: '!'
-    emoji: 🚀
-    description: Put ! description here
+title: 总结
+nav:
+  title: 组件
+  order: 1
+group:
+  title: 总结
+  order: 3
 ---

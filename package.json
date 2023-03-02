@@ -11,7 +11,7 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "dev": "dumi dev",
-    "docs:preview": "cross-env SITE_BUILD_ENV=PREVIEW npm run build:site && serve doc-site",
+    "docs:preview": "cross-env SITE_BUILD_ENV=PREVIEW npm run docs:build && serve doc-site",
     "docs:clean": "rimraf doc-site .dumi",
     "docs:build": "rimraf doc-site && dumi build",
     "docs:deploy": "npm run docs:build && gh-pages -d doc-site",
@@ -36,7 +36,7 @@
     "antd": "^5.2.3",
     "cpr": "^3.0.1",
     "cross-env": "^7.0.3",
-    "dumi": "^2.1.14",
+    "dumi": "^1.1.47",
     "gh-pages": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",

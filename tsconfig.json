@@ -13,6 +13,6 @@
     "resolveJsonModule": true,
     "skipLibCheck": true
   },
-  "include": ["src", "/**/*.ts",".dumi/**/*",".dumirc.ts"],
-  "exclude": ["node_modules", "demo", ".dumi", "lib", "esm", "dist"]
+  "include": ["src", "/**/*.ts"],
+  "exclude": ["node_modules", "lib", "esm", "dist", "typings"]
 }

@@ -9,14 +9,8 @@ if (process.env.SITE_BUILD_ENV === 'PREVIEW') {
 }
 
 export default defineConfig({
-  themeConfig: {
-    name: 'AM-UI',
-    logo: 'http://www.meda.cc/favicon.ico',
-    socialLinks:{
-        github: 'https://github.com/suyi0509/test-uui',
-        gitlab: 'https://github.com/suyi0509/test-uui'
-    }
-  },
+  title: 'AM-UI',
+  logo: 'http://www.meda.cc/favicon.ico',
   apiParser: {}, // API配置项
   resolve: {
     // 配置入口文件路径，API 解析将从这里开始

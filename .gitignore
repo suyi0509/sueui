@@ -1,5 +1,6 @@
 node_modules
-.dumi
 esm
 lib
 doc-site
+# dumi
+.umi
