@@ -21,4 +21,9 @@ table组件库---------------------------
 
 <code src="../../demo/Amtable/index.tsx" description="基于antd封装table 基础表格组件">基础表格组件</code>
 
-<API id="AmTable"></API>
+| 属性名   | 描述   |   类型   | 默认   |
+| ------- | ------- | ------- | ------- |
+| text    | 我是text属性 | string | '' |
+| 单元格3 | 单元格4 | 单元格1 | 单元格2 |
+
+<!-- <API id="AmTable"></API> -->

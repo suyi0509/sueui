@@ -83,8 +83,8 @@ const data: DataType[] = [
     tags: ['cool', 'teacher'],
   },
 ];
-const Amtable = () => {
+const AmtableDemo = () => {
   return <AmTable columns={columns} dataSource={data} text='demo表格'></AmTable>;
 };
 
-export default Amtable;
+export default AmtableDemo;
