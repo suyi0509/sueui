@@ -1,8 +1,8 @@
 `AM-UI 艾美UI库`
 
-- 文档工具[dumi](https://v1.d.umijs.org/zh-CN)
-- 组件库UI[antd](https://ant.design/index-cn)
-- npm官网[npm](https://www.npmjs.com/)
+- 文档工具 [dumi](https://v1.d.umijs.org/zh-CN)
+- 组件库UI [antd](https://ant.design/index-cn)
+- npm官网 [npm](https://www.npmjs.com/)
 
 ### 安装
 ```bash
