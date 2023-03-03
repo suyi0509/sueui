@@ -1,7 +1,7 @@
 import type { ColumnsType } from 'antd/es/table';
 import { Space, Tag } from 'antd';
 import React from 'react';
-import { AmTable } from 'test-am-ui';
+import { SyTable } from 'suyi-ui';
 
 interface DataType {
   key: string;
@@ -83,8 +83,8 @@ const data: DataType[] = [
     tags: ['cool', 'teacher'],
   },
 ];
-const AmtableDemo = () => {
-  return <AmTable columns={columns} dataSource={data} text='demo表格'></AmTable>;
+const SyTableDemo = () => {
+  return <SyTable columns={columns} dataSource={data} text='demo表格'></SyTable>;
 };
 
-export default AmtableDemo;
+export default SyTableDemo;
