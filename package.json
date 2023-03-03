@@ -1,6 +1,6 @@
 {
   "name": "suyi-ui",
-  "version": "1.0.4",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "module": "esm/index.js",
@@ -11,10 +11,10 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "dev": "dumi dev",
-    "docs:preview": "cross-env SITE_BUILD_ENV=PREVIEW npm run docs:build && serve doc-site",
-    "docs:clean": "rimraf doc-site src/.umi",
-    "docs:build": "rimraf doc-site && dumi build",
-    "docs:deploy": "npm run docs:build && gh-pages -d doc-site",
+    "docs:preview": "cross-env SITE_BUILD_ENV=PREVIEW npm run docs:build && serve sue-ui",
+    "docs:clean": "rimraf sue-ui src/.umi",
+    "docs:build": "rimraf sue-ui && dumi build",
+    "docs:deploy": "npm run docs:build && gh-pages -d sue-ui",
     "np:clean": "rimraf lib esm dist",
     "np:build": "npm run np:clean && tsc -p tsconfig.build.json && cpr lib esm && gulp",
     "np:publish": "npm publish"

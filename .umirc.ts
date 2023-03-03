@@ -10,7 +10,6 @@ if (process.env.SITE_BUILD_ENV === 'PREVIEW') {
 
 export default defineConfig({
   title: 'SUE-UI',
-  logo: 'http://www.meda.cc/favicon.ico',
   apiParser: {}, // API配置项
   resolve: {
     // 配置入口文件路径，API 解析将从这里开始

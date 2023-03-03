@@ -1,1 +1,1 @@
-export { default as AmTable } from './AmTable/index';
+export { default as SyTable } from './SyTable/index';
