@@ -1,7 +1,7 @@
 /*
  * @Author: suyi
  * @Date: 2023-04-12 17:56:55
- * @LastEditTime: 2023-04-12 18:58:44
+ * @LastEditTime: 2023-04-13 11:32:10
  * @LastEditors: suyi
  * @Description: 如果代码不是为了制造bug，那将毫无意义
  * @FilePath: \test-uui\src\TableForm\components\TableFormHeader\TableFormHeader.tsx
@@ -9,16 +9,14 @@
 import React, { useEffect, useState } from 'react';
 import { Breadcrumb } from 'antd';
 
+import { ItemType } from 'antd/es/breadcrumb/Breadcrumb';
+
 import './TableFormHeader.less'
 
-export interface ValidedNavItem {
-  title: string;
-  key: any;
-}
 
 export interface ITableFormHeader {
   headerTitle?: String;
-  headerNav?: Array<ValidedNavItem>;
+  headerNav?: Array<ItemType>;
 }
 
 

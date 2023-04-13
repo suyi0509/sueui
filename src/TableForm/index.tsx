@@ -1,7 +1,7 @@
 /*
  * @Author: suyi
  * @Date: 2023-04-12 17:51:55
- * @LastEditTime: 2023-04-12 18:50:21
+ * @LastEditTime: 2023-04-13 18:19:09
  * @LastEditors: suyi
  * @Description: 如果代码不是为了制造bug，那将毫无意义
  * @FilePath: \test-uui\src\TableForm\index.tsx
@@ -9,7 +9,7 @@
 import { Table } from 'antd';
 import type { TableProps } from 'antd/es/table';
 import React, { type FC } from 'react';
-import { TableFormHeader } from './components';
+import { TableFormHeader, TableFormFilterBar } from './components';
 
 import './index.less';
 
@@ -25,19 +25,18 @@ const TableForm = <T extends object>(props: ITableForm<T>) => {
   return (
     <div>
       <TableFormHeader
-        headerTitle={'1'}
+        headerTitle={'标题'}
         headerNav={[
           {
-            path: '/home',
-            breadcrumbName: 'Home',
+            title: 'Home',
           },
           {
-            path: '/home/detail',
-            breadcrumbName: 'detail',
+            title: <a href=''>Application Center</a>,
           },
         ]}
       />
-      {/* <Table {...rest} /> */}
+      <TableFormFilterBar />
+      <Table {...rest} />
     </div>
   );
 };
