@@ -11,7 +11,7 @@ import { Breadcrumb } from 'antd';
 
 import { ItemType } from 'antd/es/breadcrumb/Breadcrumb';
 
-import './TableFormHeader.less'
+import './index.less'
 
 
 export interface ITableFormHeader {
