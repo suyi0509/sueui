@@ -1,7 +1,7 @@
 /*
  * @Author: suyi
  * @Date: 2023-04-13 11:49:22
- * @LastEditTime: 2023-04-18 11:52:24
+ * @LastEditTime: 2023-05-15 18:32:57
  * @LastEditors: suyi
  * @Description: 如果代码不是为了制造bug，那将毫无意义
  * @FilePath: \test-uui\src\TableForm\components\TableFormFilterBar\FilterBar.tsx
@@ -20,10 +20,61 @@ import {
   Space,
 } from 'antd';
 import { isPlainObject, isFunction } from 'is-what';
-import { IFilterBarType, IFiltersType, IFilterGroup } from './type';
+import {
+  IFilterBarType,
+  IFiltersType,
+  IFieldSelect,
+  IFieldDatePicker,
+  IFieldInputNumber,
+  IFilterGroup,
+} from './type';
 import './index.less';
-import { FieldInput } from './fields';
+import {
+  FieldInput,
+  FieldSelect,
+  FieldDatePicker,
+  FieldRangePicker,
+  FieldCascader,
+  FieldInputNumber,
+  FieldRadio,
+  FieldCheckBox,
+} from './fields';
 import Item from 'antd/es/list/Item';
+
+const Coptions = [
+  {
+    value: 'zhejiang',
+    label: 'Zhejiang',
+    children: [
+      {
+        value: 'hangzhou',
+        label: 'Hangzhou',
+        children: [
+          {
+            value: 'xihu',
+            label: 'West Lake',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: 'jiangsu',
+    label: 'Jiangsu',
+    children: [
+      {
+        value: 'nanjing',
+        label: 'Nanjing',
+        children: [
+          {
+            value: 'zhonghuamen',
+            label: 'Zhong Hua Men',
+          },
+        ],
+      },
+    ],
+  },
+];
 
 const filterBar: IFilterBarType = {
   // searchButton: {
@@ -48,7 +99,7 @@ const filterBar: IFilterBarType = {
   //     </Button>
   //   </div>
   // ),
-  itemsPerRow: 5,
+  itemsPerRow: 4,
   formAttars: {
     // labelCol: { span: 4 },
     // wrapperCol: { span: 14 },
@@ -56,94 +107,121 @@ const filterBar: IFilterBarType = {
   filters: [
     {
       type: 'input',
-      model: 'test', //字段名
-      label: '起始日期', // 字段文本说明,
+      model: 'test1', //字段名
+      label: '输入', // 字段文本说明,
+      itemsPerCol: 4,
       componentAttrs: {
         // input
       },
       formItemAttars: {
-        name: '111',
+        style: { width: 120 },
       },
     },
     {
-      group: 'g1',
-      groupname: '组分类',
-      chilrens: [
-        {
-          type: 'input',
-          model: 'test', //字段名
-          label: '起始日期6', // 字段文本说明,
-          componentAttrs: {
-            // input
-          },
-          formItemAttars: {
-            name: '111',
-          },
-        },
-        {
-          type: 'input',
-          model: 'test', //字段名
-          label: '名称', // 字段文本说明,
-          componentAttrs: {
-            // input
-          },
-          formItemAttars: {
-            name: '111',
-          },
-        },
-        {
-          type: 'input',
-          model: 'test', //字段名
-          label: '名称', // 字段文本说明,
-          componentAttrs: {
-            // input
-          },
-          formItemAttars: {
-            name: '111',
-          },
-        },
-        {
-          type: 'input',
-          model: 'test', //字段名
-          label: '名称', // 字段文本说明,
-          componentAttrs: {},
-          formItemAttars: {
-            name: '111',
-          },
-        },
-        {
-          type: 'input',
-          model: 'test', //字段名
-          label: '日出大苏打得', // 字段文本说明,
-          componentAttrs: {
-            // input
-          },
-          formItemAttars: {
-            name: '111',
-          },
-        },
+      type: 'select',
+      model: 'test2', //字段名
+      label: '选择项', // 字段文本说明,
+      options: [
+        { value: 'jack', label: 'Jack' },
+        { value: 'lucy', label: 'Lucy' },
       ],
-    },
-    {
-      type: 'input',
-      model: 'test', //字段名
-      label: '名称', // 字段文本说明,
       componentAttrs: {
         // input
+        // style: { width: 10 },
+        mode: 'multiple',
       },
       formItemAttars: {
         name: '111',
+      },
+    },
+    {
+      type: 'rangePicker',
+      model: 'test4', //字段名
+      label: '日期范围', // 字段文本说明,
+      itemsPerCol: 2,
+      componentAttrs: {
+        // input
+        // style: { width: 10 },
+      },
+      formItemAttars: {
+        name: '111',
+      },
+    },
+    {
+      type: 'datePicker',
+      model: 'test3', //字段名
+      label: '日期', // 字段文本说明,
+      picker: 'date',
+      componentAttrs: {
+        // input
+        // style: { width: 10 },
+      },
+      formItemAttars: {
+        name: '111',
+      },
+    },
+    {
+      type: 'cascader',
+      model: 'test5', //字段名
+      label: '联级', // 字段文本说明,
+      options: Coptions,
+      componentAttrs: {
+        // input
+        // style: { width: 10 },
+      },
+      formItemAttars: {},
+    },
+    {
+      type: 'inputNumber',
+      model: 'test6', //字段名
+      label: '数字框', // 字段文本说明,
+      componentAttrs: {
+        // input
+        // style: { width: 10 },
+      },
+      formItemAttars: {
+        // name: '111',
+      },
+    },
+    {
+      type: 'radio',
+      model: 'test7', //字段名
+      label: '单选项', // 字段文本说明,
+      options: [
+        { label: 'Apple', value: 'Apple' },
+        { label: 'Pear', value: 'Pear' },
+        { label: 'Orange', value: 'Orange' },
+      ],
+      componentAttrs: {
+        // input
+        // style: { width: 10 },
+      },
+      formItemAttars: {
+        // name: '111',
+      },
+    },
+    {
+      type: 'checkBox',
+      model: 'test8', //字段名
+      label: '多选项', // 字段文本说明,
+      options: [
+        { label: 'Apple', value: 'Apple' },
+        { label: 'Pear', value: 'Pear' },
+        { label: 'Orange', value: 'Orange' },
+      ],
+      componentAttrs: {
+        // input
+        // style: { width: 10 },
+      },
+      formItemAttars: {
+        // name: '111',
       },
     },
   ],
 };
 
 const FilterBar = () => {
-  const [formItemLayout, setFormItemLayout] = useState<any>(null);
-
-  useEffect(() => {
-    computerLayout();
-  }, []);
+  useEffect(() => {}, []);
 
   const renderFilter = (
     filter: IFiltersType | IFilterGroup,
@@ -151,7 +229,7 @@ const FilterBar = () => {
   ): ReactNode => {
     if (!filter) return null;
     if (filter.group) {
-      return renderFilerGroup(filter as IFilterGroup, i);
+      // return renderFilerGroup(filter as IFilterGroup, i);
     } else if (isPlainObject(filter)) {
       return renderFormItem(filter as IFiltersType, i);
     }
@@ -169,40 +247,112 @@ const FilterBar = () => {
     );
   };
 
+  const getColSpan = () => {
+    const itemsPerRow = filterBar.itemsPerRow || 4;
+    const colSpan = {
+      xs: 24,
+      sm: 24,
+      md: 24,
+      lg: Math.ceil(24 / itemsPerRow) * 2,
+      xl: Math.ceil(24 / itemsPerRow),
+    };
+    return colSpan;
+  };
+
   const renderFormItem = (filter: IFiltersType, i: number): ReactNode => {
     if (!(filter && isPlainObject(filter))) return null;
+    const colSpan = getColSpan();
     if (filter.type === 'input') {
       return (
-        <Col key={i} style={{ padding: '8px 0px' }}>
+        <Col
+          key={i}
+          style={{ padding: '12px 0px' }}
+          {...colSpan}
+          xl={filter.itemsPerCol ? colSpan.xl * filter.itemsPerCol : colSpan.xl}
+        >
           <FieldInput data={filter} />
+        </Col>
+      );
+    } else if (filter.type === 'inputNumber') {
+      return (
+        <Col
+          key={i}
+          style={{ padding: '12px 0px' }}
+          {...colSpan}
+          xl={filter.itemsPerCol ? colSpan.xl * filter.itemsPerCol : colSpan.xl}
+        >
+          <FieldInputNumber data={filter as IFieldInputNumber} />
+        </Col>
+      );
+    } else if (filter.type === 'select') {
+      return (
+        <Col
+          key={i}
+          style={{ padding: '12px 0px' }}
+          {...colSpan}
+          xl={filter.itemsPerCol ? colSpan.xl * filter.itemsPerCol : colSpan.xl}
+        >
+          <FieldSelect data={filter as IFieldSelect} />
+        </Col>
+      );
+    } else if (filter.type === 'datePicker') {
+      return (
+        <Col
+          key={i}
+          style={{ padding: '12px 0px' }}
+          {...colSpan}
+          xl={filter.itemsPerCol ? colSpan.xl * filter.itemsPerCol : colSpan.xl}
+        >
+          <FieldDatePicker data={filter as IFieldDatePicker} />
+        </Col>
+      );
+    } else if (filter.type === 'rangePicker') {
+      return (
+        <Col
+          key={i}
+          style={{ padding: '12px 0px' }}
+          {...colSpan}
+          xl={filter.itemsPerCol ? colSpan.xl * filter.itemsPerCol : colSpan.xl}
+        >
+          <FieldRangePicker data={filter as IFieldDatePicker} />
+        </Col>
+      );
+    } else if (filter.type === 'cascader') {
+      return (
+        <Col
+          key={i}
+          style={{ padding: '12px 0px' }}
+          {...colSpan}
+          xl={filter.itemsPerCol ? colSpan.xl * filter.itemsPerCol : colSpan.xl}
+        >
+          <FieldCascader data={filter as IFieldSelect} />
+        </Col>
+      );
+    } else if (filter.type === 'radio') {
+      return (
+        <Col
+          key={i}
+          style={{ padding: '12px 0px' }}
+          {...colSpan}
+          xl={filter.itemsPerCol ? colSpan.xl * filter.itemsPerCol : colSpan.xl}
+        >
+          <FieldRadio data={filter as IFieldSelect} />
+        </Col>
+      );
+    } else if (filter.type === 'checkBox') {
+      return (
+        <Col
+          key={i}
+          style={{ padding: '12px 0px' }}
+          {...colSpan}
+          xl={filter.itemsPerCol ? colSpan.xl * filter.itemsPerCol : colSpan.xl}
+        >
+          <FieldCheckBox data={filter as IFieldSelect} />
         </Col>
       );
     }
 
     return null;
-  };
-
-  const computerLayout = () => {
-    const itemsPerRow = filterBar.itemsPerRow || 4;
-    const colSpan = Math.floor(24 / itemsPerRow);
-    console.log(colSpan, 'colSpan');
-    const labelCol = { span: colSpan + 3 };
-    const wrapperCol = { span: 24 - colSpan - 4 };
-    const formItemLayout = {
-      labelCol: {
-        xs: labelCol,
-        sm: labelCol,
-        md: labelCol,
-        lg: labelCol,
-      },
-      wrapperCol: {
-        xs: wrapperCol,
-        sm: wrapperCol,
-        md: wrapperCol,
-        lg: wrapperCol,
-      },
-    };
-    setFormItemLayout(formItemLayout);
   };
 
   const {
@@ -213,6 +363,26 @@ const FilterBar = () => {
     filters = [],
   } = filterBar;
   const showBtn = searchButton || resetButton || renderButton;
+
+  const formItemLayout = {
+    labelCol: { span: 6, offset: 2 },
+    wrapperCol: { span: 12 },
+  };
+
+  const twoformItemLayout = {
+    labelCol: { span: 3, offset: 1 },
+    wrapperCol: { span: 18 },
+  };
+
+  const threeformItemLayout = {
+    labelCol: { span: 2, offset: 1 },
+    wrapperCol: { span: 18 },
+  };
+
+  const fourformItemLayout = {
+    labelCol: { span: 1, offset: 1 },
+    wrapperCol: { span: 20 },
+  };
   return (
     <Form
       className='tf-filterbar'
@@ -220,8 +390,10 @@ const FilterBar = () => {
       {...formItemLayout}
       {...formAttars}
     >
-      <Row>{filters.length && filters.map(renderFilter)}</Row>
-      <Row>
+      <Row className='tf-filterbar__row'>
+        {filters.length && filters.map(renderFilter)}
+      </Row>
+      {/* <Row>
         {showBtn && (
           <FilterbarButtons
             searchButton={searchButton}
@@ -229,7 +401,7 @@ const FilterBar = () => {
             renderButton={renderButton}
           />
         )}
-      </Row>
+      </Row> */}
     </Form>
   );
 };

@@ -1,7 +1,7 @@
 /*
  * @Author: suyi
  * @Date: 2023-04-12 17:51:55
- * @LastEditTime: 2023-04-14 17:23:04
+ * @LastEditTime: 2023-05-15 15:24:44
  * @LastEditors: suyi
  * @Description: 如果代码不是为了制造bug，那将毫无意义
  * @FilePath: \test-uui\src\TableForm\index.tsx
@@ -137,8 +137,8 @@ const TableForm = <T extends object>(props: ITableForm<T>) => {
         ]}
       />
       <TableFormFilterBar />
-      <TableFormToolBar toolBarData={toolBarData} />
-      <Table {...rest} />
+      {/* <TableFormToolBar toolBarData={toolBarData} /> */}
+      {/* <Table {...rest} /> */}
     </div>
   );
 };
