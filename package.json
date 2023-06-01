@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.21.0",
+    "is-what": "^4.1.12",
     "what.js": "^1.0.1"
   },
   "peerDependencies": {
